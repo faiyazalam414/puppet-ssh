@@ -42,7 +42,9 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class ssh {
-
-
+#  $pac_name = $p_name::ssh::params,
+#  $ser_name = $s_name::ssh::params,
+class ssh() inherits ssh::params {
+  class { 'ssh::install':} ->
+  class { 'ssh::service':}
 }
